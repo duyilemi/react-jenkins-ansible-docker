@@ -45,3 +45,38 @@ sudo apt-get install -y nodejs
 ```
 echo "jenkins ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 ```
+
+# ansible
+
+- name: build and run container
+  hosts: localhost
+  become: yes
+  become_user: charlie
+
+  tasks:
+
+  - name: stop running container
+    command: docker stop react-nginx
+    ignore_errors: yes
+
+  - name: delete the container
+    command: docker rm react-nginx
+    ignore_errors: yes
+
+  - name: delete the image
+    command: docker rmi react-nginx
+    ignore_errors: yes
+
+  - name: build the image
+    command: docker build -t react-nginx .
+    args:
+    chdir: /home/charlie/react-jenkins-ansible-docker
+
+  - name: run the container
+    command: docker run --name react-nginx -d -p 80:80 react-nginx
+
+# exec command
+
+cd /home/charlie/react-jenkins-ansible-docker ;
+docker build -t react-nginx . ;
+docker run --name react-nginx -d -p 80:80 react-nginx ;
