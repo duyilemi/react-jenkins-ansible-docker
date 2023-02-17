@@ -2,7 +2,7 @@
 
 ## setup Jenkins on EC2
 
-# install java and jenkins on ubuntu server
+# install java and jenkins on EC2(ubuntu)
 
 sudo apt update
 sudo apt install openjdk-11-jdk -y
