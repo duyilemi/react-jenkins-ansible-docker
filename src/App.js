@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
@@ -7,9 +7,8 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-        <h1> Hello World </h1>
-      <h2> My name is Abdelali Jadelmoula </h2>
-<h3> I am in love with devops (CI/CD) pipeline </h3>
+          <h1> Hello World </h1>
+          <h2>I am Charles Duyilemi</h2>
         </p>
         <a
           className="App-link"
